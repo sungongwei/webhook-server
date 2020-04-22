@@ -3,13 +3,13 @@
  * @Author: gongwei_sun
  * @LastEditors: sungw
  * @Date: 2019-04-28 11:42:55
- * @LastEditTime: 2020-04-22 23:06:26
+ * @LastEditTime: 2020-04-22 23:10:45
  */
 const express = require('express')
 const router = express.Router()
 const EventEmitter = require('events')
 const { exec } = require('child_process')
-const eventList = [ 'ping,', 'push' ]
+const eventList = [ 'ping', 'push' ]
 class WebHook extends EventEmitter {
   constructor() {
     super()
