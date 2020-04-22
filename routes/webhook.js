@@ -16,6 +16,7 @@ class WebHook extends EventEmitter {
     this.hook = (req, res) => {
       var agent = req.headers['user-agent'],event 
       if (agent !== 'Coding.net Hook' && agent.indexOf("GitHub-Hookshot/") ==-1) {
+        console.log(agent ,"agent err")
         this.emit('error', res)
         return
       }
@@ -25,10 +26,12 @@ class WebHook extends EventEmitter {
         event = req.headers['X-GitHub-Event']
       }
       if (!event) {
+        console.log(event ,"event err")
         this.emit('error', res)
         return
       }
       if (eventList.indexOf(event) === -1) {
+        console.log(event ,"event err")
         this.emit('error', res)
         return
       }
