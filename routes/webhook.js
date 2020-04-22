@@ -3,7 +3,7 @@
  * @Author: gongwei_sun
  * @LastEditors: sungw
  * @Date: 2019-04-28 11:42:55
- * @LastEditTime: 2020-04-22 22:52:54
+ * @LastEditTime: 2020-04-22 22:57:11
  */
 const express = require('express')
 const router = express.Router()
@@ -15,7 +15,7 @@ class WebHook extends EventEmitter {
     super()
     this.hook = (req, res) => {
       var agent = req.headers['user-agent'],event 
-      if (agent !== 'Coding.net Hook' || agent.indexOf("GitHub-Hookshot/") ==-1) {
+      if (agent !== 'Coding.net Hook' && agent.indexOf("GitHub-Hookshot/") ==-1) {
         this.emit('error', res)
         return
       }
