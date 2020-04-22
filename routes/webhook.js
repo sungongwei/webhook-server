@@ -3,7 +3,7 @@
  * @Author: gongwei_sun
  * @LastEditors: sungw
  * @Date: 2019-04-28 11:42:55
- * @LastEditTime: 2020-04-22 22:31:01
+ * @LastEditTime: 2020-04-22 22:52:54
  */
 const express = require('express')
 const router = express.Router()
@@ -19,7 +19,7 @@ class WebHook extends EventEmitter {
         this.emit('error', res)
         return
       }
-      if(agent !== 'Coding.net Hook'){
+      if(agent == 'Coding.net Hook'){
         event = req.headers['x-coding-event']
       }else{
         event = req.headers['X-GitHub-Event']
